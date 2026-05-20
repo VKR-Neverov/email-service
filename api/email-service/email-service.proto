@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package email_service;
+
+option go_package = "github.com/fidesy-pay/email-service;email_service";
+
+service EmailService {
+  rpc SendCode(SendCodeRequest) returns (SendCodeResponse);
+  rpc ConfirmCode(ConfirmCodeRequest) returns (ConfirmCodeResponse);
+}
+
+message SendCodeRequest {
+  string email = 1;
+}
+
+message SendCodeResponse {
+  string id = 1;
+}
+
+message ConfirmCodeRequest {
+  string id = 1;
+  string code = 2;
+}
+
+message ConfirmCodeResponse {}

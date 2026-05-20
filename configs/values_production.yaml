@@ -1,0 +1,3 @@
+whitelist-code: ""
+
+kafka-brokers: "kafka-prod:9093"
